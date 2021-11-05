@@ -7,7 +7,5 @@ end
 if [ "$argv[1]" = "" ]
   set -g saeialbaridaddr '127.0.0.1/32'
 end
-  while [ "0" = "0" ]
-    socat TCP-LISTEN:$saeialbaridport,range=$saeialbaridaddr stdout
-  end
+  socat TCP-LISTEN:$saeialbaridport,range=$saeialbaridaddr stdout
 end

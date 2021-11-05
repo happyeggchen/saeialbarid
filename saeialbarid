@@ -60,18 +60,14 @@ end
 if [ "$argv[1]" = "" ]
   set -g saeialbaridaddr '127.0.0.1/32'
 end
-  while [ "0" = "0" ]
-    socat TCP-LISTEN:$saeialbaridport,range=$saeialbaridaddr stdout
-  end
+  socat TCP-LISTEN:$saeialbaridport,range=$saeialbaridaddr stdout
 end
 function listen-uset -d "Saeialbarid api socket server"
 set -g saeialbaridsocketaddr
 if [ "$argv[1]" = "" ]
   set -g saeialbaridsocketaddr '/tmp/saeialbarid.sock'
 end
-  while [ "0" = "0" ]
-    socat UNIX-LISTEN:$saeialbaridsocketaddr stdout
-  end
+  socat UNIX-LISTEN:$saeialbaridsocketaddr stdout
 end
 switch $argv[1]
 case s
@@ -95,4 +91,4 @@ case c
 case h help '*'
   help_echo
 end
-#build time UTC = 2021-10-24_04:10:21
+#build time UTC = 2021-11-05_10:53:13
