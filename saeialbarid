@@ -63,7 +63,7 @@ end
   socat TCP-LISTEN:$saeialbaridport,range=$saeialbaridaddr stdout
 end
 function listen-uset -d "Saeialbarid api socket server"
-set -g saeialbaridsocketaddr
+set -g saeialbaridsocketaddr $argv[1]
 if [ "$argv[1]" = "" ]
   set -g saeialbaridsocketaddr '/tmp/saeialbarid.sock'
 end
@@ -91,4 +91,4 @@ case c
 case h help '*'
   help_echo
 end
-#build time UTC = 2021-11-05_10:53:13
+#build time UTC = 2021-11-06_06:21:16
